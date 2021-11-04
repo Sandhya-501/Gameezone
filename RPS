@@ -1,0 +1,51 @@
+'''
+Rock, Paper, Scissor 
+5 turns only
+Either loss or win or tieee.....
+'''
+name1 = input("Enter your name: ")
+print("\nLet's start the game * {} * with the machine...".format(name1))
+print("Remember, here, s=Scissor, r=Rock and p=Paper...\nAnd first 3 scorer will won the match...")
+print("And further you know very well !!!\nHope you'll get to know the theme...\nEnjoy...")
+machine_total = 0
+name1_total = 0.
+
+import random
+while (machine_total < 3 or name1_total == 3) and (machine_total == 3 or name1_total < 3):
+
+    lis = ['s', 'r', 'p']
+    z = (random.sample(lis, 1))
+    y = input("\nchoose your choice {} r/p/s :".format(name1))
+    lis1 = [y]
+    x = z + lis1
+    print(x)
+
+    if x[0] == 'r' and x[1] == 'p':
+        print("You got 1 point")
+        name1_total += 1
+    if x[0] == 'r' and x[1] == 's':
+        print("Machine got 1 point")
+        machine_total += 1
+    if x[0] == 's' and x[1] == 'r':
+        print("You got 1 point")
+        name1_total += 1
+    if x[0] == 's' and x[1] == 'p':
+        print("Machine got 1 point")
+        machine_total += 1
+    if x[0] == 'p' and x[1] == 's':
+        print("You got 1 point")
+        name1_total += 1
+    if x[0] == 'p' and x[1] == 'r':
+        print("Machine got 1 point")
+        machine_total += 1
+
+print("\nMachine got total {} points.".format(machine_total))
+print("You got total {} points.\n".format(int(name1_total)))
+
+if machine_total > name1_total:
+    print('You lost Baby.\nMachine is the Winner :( ')
+elif name1_total > machine_total:
+    print("Congratsssss!!!")
+    print(name1, "you are 'The Winner' :) ")
+else:
+    print("Match Is Tie Baby...!!!  :|")
